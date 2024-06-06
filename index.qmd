@@ -98,10 +98,15 @@ map <-
               title = "Population density (km2)",
               border.alpha = .25,
               group = "population",
-              popup.vars = c("census_tract", "area_km2", "population",
-                             "density_km2", "households", "households_nbi",
-                             "households_no_tap_water", "households_no_sewage",
-                             "socioeconomic_strata")) +
+              popup.vars = c("census tract" = "census_tract", 
+                             "area (km2)" = "area_km2", 
+                             "population",
+                             "population density" = "density_km2", 
+                             "households", 
+                             "households with NBI (%)" = "households_nbi",
+                             "households without tap water (%)" = "households_no_tap_water", 
+                             "households without sewage (%)" = "households_no_sewage",
+                             "socioeconomic strata" = "socioeconomic_strata")) +
   
   # add health units pins
   tm_shape(shp = health_units) +
