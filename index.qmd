@@ -73,7 +73,8 @@ map <-
                               direction = -1, alpha = .9),
               title = "Sanitary vulnerability (%)",
               border.alpha = .25,
-              group = "health") +
+              group = "health",
+              popup.vars = F) +
     
     # social strata
     tm_shape(shp = strata) +
@@ -83,7 +84,8 @@ map <-
                               direction = -1, alpha = .9),
               title = "Socioeconomic strata",
               border.alpha = .25,
-              group = "strata") +
+              group = "strata",
+              popup.vars = F) +
   
   # population density
   tm_shape(shp = strata) +
@@ -95,7 +97,11 @@ map <-
                               direction = -1, alpha = .9),
               title = "Population density (km2)",
               border.alpha = .25,
-              group = "population") +
+              group = "population",
+              popup.vars = c("census_tract", "area_km2", "population",
+                             "density_km2", "households", "households_nbi",
+                             "households_no_tap_water", "households_no_sewage",
+                             "socioeconomic_strata")) +
   
   # add health units pins
   tm_shape(shp = health_units) +
